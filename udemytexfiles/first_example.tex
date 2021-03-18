@@ -11,6 +11,39 @@
 \usepackage{graphicx}
 \usepackage{graphics}
 \usepackage{hyperref}
+\usepackage{algorithmicx}
+\usepackage{algpseudocodex}
+\usepackage{xcolor}
+
+\colorlet{mygray}{black!30}
+\colorlet{mygreen}{green!60!blue}
+\colorlet{mymauve}{red!60!blue}
+
+\lstset { %
+    backgroundcolor=\color{gray!10},
+    basicstyle=\ttfamily,
+    columns=fullflexible,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    commentstyle=\color{mygreen},
+    extendedchars=true,
+    frame=single,
+    keepspaces=true,
+    keywordstyle=\color{blue},
+    language=c++,
+    numbers=none,
+    numbersep=5pt,
+    numberstyle=\tiny\color{blue},
+    rulecolor=\color{mygray},
+    showspaces=false,
+    showtabs=false,
+    stepnumber=5,
+    stringstyle=\color{mymauve},
+    tabsize=3,
+    title=\lstname
+}
+
 \geometry{a4paper}
 \title{My first document}
 \author{Michael Kirsch}
@@ -75,7 +108,7 @@
     \section{Tables and Floats}
     lets go with tables \bigskip
     padnjiwajdaiodjawio
-    
+
     \subsection{Tables}
     \vspace{0.5cm}
     \begin{tabular}{|c||c|}
@@ -87,18 +120,18 @@
         haw   & jdawoi             \\
         \hline
     \end{tabular}
-    
+
     \subsection{Floats}
     \begin{table}[htbp]
         \caption{Hello World Table}
         \begin{center}
-            \begin{tabular}{|c||c|}
+            \begin{tabular}{|c|c|}
                 \hline
                 Name  & \includegraphics[width=0.7\textwidth]{Anno 1404 - History Edition2021-2-2-1-53-42} \\
                 \hline
-                Name2 & fajwio             \\
+                Name2 & fajwio                                                                             \\
                 \hline
-                haw   & jdawoi             \\
+                haw   & jdawoi                                                                             \\
                 \hline
             \end{tabular}
         \end{center}
@@ -109,8 +142,14 @@
     Hello badjwidjwiodjawo see Table~\ref{tab:Important Stuff} for more info
 
 % This is comment
-    \section{Graphics}
 
+
+    \section{Graphics}
+    \begin{equation}
+        24*60=1440
+        \label{eq:equation}
+
+    \end{equation}
 
 
     \begin{figure}[htbp]
@@ -123,4 +162,62 @@
 
     this is library see \ref{fig:Images}
 
+    $5*4=28$
+
+
+    ive read a nice book~\cite{two}
+    and a good url~\cite{Doe:2009:Online}
+
+    hier referenz~\cite{tollesbuch}
+
+
+    \section{Algorythms}
+    \begin{algorithmic}
+        \If{$learned \geg 100$}
+            \State $okay \gets true$
+            \else
+            \While{$not okay$}
+                \State repeat
+                \State {$okay \gets true$}
+            \EndWhile
+        \EndIf
+    \end{algorithmic}
+
+    \clearpage
+    \section{C++ Stuff}
+    \begin{lstlisting}[label={lst:lstlisting}]
+        #include <tesseract/baseapi.h>
+        #include <leptonica/allheaders.h>
+
+        int main()
+        {
+            char *outText;
+
+            tesseract::TessBaseAPI *api = new tesseract::TessBaseAPI();
+            // Initialize tesseract-ocr with English,
+            // without specifying tessdata path
+            if (api->Init(NULL, "eng")) {
+                fprintf(stderr, "Could not initialize tesseract.\n");
+                exit(1);
+            }
+
+            // Open input image with leptonica library
+            Pix *image = pixRead("/usr/src/tesseract/testing/phototest.tif");
+            api->SetImage(image);
+            // Get OCR result
+            outText = api->GetUTF8Text();
+            printf("OCR output:\n%s", outText);
+
+            // Destroy used object and release memory
+            api->End();
+            delete [] outText;
+            pixDestroy(&image);
+
+            return 0;
+        }
+    \end{lstlisting}
+
+
+    \bibliographystyle{plain}
+    \bibliography{first_example}
 \end{document}

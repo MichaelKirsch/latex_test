@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.17)  17 MAR 2021 19:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.17)  17 MAR 2021 19:45
 entering extended mode
 **./first_example.tex
 (first_example.tex
@@ -360,8 +360,19 @@ File: Anno 1404 - History Edition2021-2-2-1-53-42.jpg Graphic file (type jpg)
 Package pdftex.def Info: Anno 1404 - History Edition2021-2-2-1-53-42.jpg  used 
 on input line 118.
 (pdftex.def)             Requested size: 317.07614pt x 178.34775pt.
- [2 <./Anno 1404 - History Edition2021-2-2-1-53-42.jpg>] [3]
+
+
+LaTeX Warning: Citation `two' on page 2 undefined on input line 126.
+
+
+LaTeX Warning: Citation `Doe:2009:Online' on page 2 undefined on input line 127
+.
+
+[2 <./Anno 1404 - History Edition2021-2-2-1-53-42.jpg>] [3]
 (C:/Users\micha\CLionProjects\latex_test\out\first_example.aux)
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `first_example.out' has not changed.
 (rerunfilecheck)             Checksum: 6D1E73F6E33AB048A57FFF90CAFB6C84;1253.
  ) 
@@ -382,7 +393,7 @@ ype1/public/amsfonts/cm/cmr10.pfb><C:/Users/micha/AppData/Local/Programs/MiKTeX
 s/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/micha/AppData/Local
 /Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
 Output written on C:/Users\micha\CLionProjects\latex_test\out\first_example.pdf
- (3 pages, 2437867 bytes).
+ (3 pages, 2438583 bytes).
 PDF statistics:
  111 PDF objects out of 1000 (max. 8388607)
  23 named destinations out of 1000 (max. 500000)
