@@ -11,7 +11,9 @@
 \usepackage{graphicx}
 \usepackage{graphics}
 \usepackage{hyperref}
+\usepackage{caption,subcaption}
 \usepackage{algorithmicx}
+\usepackage{multirow}
 \usepackage{algpseudocodex}
 \usepackage{xcolor}
 
@@ -217,7 +219,65 @@
         }
     \end{lstlisting}
 
+    \section{Table Stuff Advanced}
 
+    \begin{table}
+        \caption{}
+        \begin{center}
+            \begin{tabular}{|l|l|p{3cm}|}
+                \hline
+                CS101 & PRogramming   & \\
+                CS201 & Lagabajwdada  & d \\
+                CS301 & awdhuidhwaui  & dhuia\\
+                \hline
+            \end{tabular}
+            \label{table_improved}
+        \end{center}
+    \end{table}
+
+    \begin{table}
+        \caption{}
+        \begin{center}
+            \begin{tabular}{| l | c | c |}
+                \hline
+                & \multicolumn{2}{c}{Ranges}\\
+                & X & Y \\
+                \hline
+                \multirow{3}{*}{Hot} & 7 & 9 \\
+                & 5 & 8 \\
+                & 3 & 6 \\
+                \hline
+                \multirow{3}{*}{Cold} & 7 & 9 \\
+                & 6 & 7 \\
+                & 3 & 6 \\
+                \hline
+
+            \end{tabular}
+            \label{table_sapcing}
+        \end{center}
+    \end{table}
+
+    \subsection{Subfigures}
+
+    \begin{figure}[htbp]
+        \centering
+            \caption{Default}
+                \begin{subfigure}[b]{0.5\textwidth}
+                    \centering
+                    \includegraphics[width=0.5\textwidth]{Anno 1404 - History Edition2021-2-2-1-53-42}
+                    \caption{Beginning}
+                    \label{subfig:fig1}
+                \end{subfigure}%
+                \begin{subfigure}[b]{0.5\textwidth}
+                    \centering
+                    \includegraphics[width=0.5\textwidth]{Anno 1404 - History Edition2021-2-2-1-53-42}
+                    \caption{End}
+                    \label{subfig:fig2}
+                \end{subfigure}%
+            \label{fig:fig2}
+    \end{figure}
+
+    \clearpage
     \bibliographystyle{plain}
     \bibliography{first_example}
 \end{document}
